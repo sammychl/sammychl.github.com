@@ -15,7 +15,7 @@
     <button ng-click="firebasePush()">firebasePush</button>
     <ul>
       <li ng-repeat="photo in photos">
-	{{photo}}
+	<img src="{{photo.thumbnailLink}}" alt="thumbnail {{index}}" />
       </li>
     </ul>
     {{misc.test}}
