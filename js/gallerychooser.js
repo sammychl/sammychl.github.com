@@ -64,7 +64,7 @@ app.controller('galleryChooserCtrl', function($scope, $firebase) {
 
 	$scope.setSelectedPost = function(id) {
 		$scope.selectedPost = galleriesArr.$getRecord(id);
-		console.log(selectedPost);
+		console.log($scope.selectedPost);
 	};
 
 
