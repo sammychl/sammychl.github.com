@@ -69,10 +69,10 @@
       <div class="row" ng-repeat="post in posts">
 	<div>Tag: {{post.tags}}</div>
 	<div>Title: {{post.title}}</div>
-	<div ng-click="selectedPostId = {{post.$id}}; console.log(selectedPostId)">Id: {{post.$id}}</div>
+	<div ng-click="selectedPostId = post.$id">Id: {{post.$id}}</div>
       </div>
       
-
+{{selectedPostId}}
 
 
     </div>
