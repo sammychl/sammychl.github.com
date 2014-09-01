@@ -51,7 +51,7 @@ app.controller('galleryChooserCtrl', function($scope, $firebase) {
 	var galleryRefSync = $firebase(galleryRef);
 	
 	$scope.photos = galleryRefSync.$asArray();
-	
+	$scope.misc = {test:"testing"};
 	$scope.firebasePush = function() {
 		console.log('firebasePush');
 		galleryRef.push({
