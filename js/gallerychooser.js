@@ -44,7 +44,7 @@ document.getElementById("dropboxChooser").appendChild(button);
 
 var galleryRef = new Firebase('https://glowing-fire-6466.firebaseIO.com/gallery');
 
-var firebaseAdd = function() {
+var firebasePush = function() {
 	galleryRef.push({
 		weddingDate: new Date(),
 		tags: ['wedding', 'vancouver', 'engagement'],
