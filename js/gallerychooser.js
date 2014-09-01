@@ -42,14 +42,28 @@ document.getElementById("dropboxChooser").appendChild(button);
  ** stuff for firebase uploading **
  ********************************/
 
-var galleryRef = new Firebase('https://glowing-fire-6466.firebaseIO.com/gallery');
+var app = angular.module('galleryChooser', ['firebase']);
 
-var firebasePush = function() {
-	galleryRef.push({
-		weddingDate: new Date(),
-		tags: ['wedding', 'vancouver', 'engagement'],
-		title: 'Tyler and Erin',
-		files: imageFiles
-	});
+
+app.controller('galleryChooserCtrl', function($scope, $firebase) {
+
+	var galleryRef = new Firebase('https://glowing-fire-6466.firebaseIO.com/gallery');
+	var galleryRefSync = $firebase(galleryRef);
 	
-};
+	$scope.photos = galleryRefSync.$asArray();
+	
+	var firebasePush = function() {
+		galleryRef.push({
+			weddingDate: new Date(),
+			tags: ['wedding', 'vancouver', 'engagement'],
+			title: 'Tyler and Erin',
+			files: imageFiles
+		});
+		
+	};
+
+	
+});
+
+
+
