@@ -2,12 +2,14 @@
 ** stuff for dropbox chooser api**
 ******************************/
 
+var imageFiles = [];
 
 var options = {
 
     // Required. Called when a user selects an item in the Chooser.
     success: function(files) {
-        alert("Here's the file link: " + files[0].link);
+	    imageFiles = files;
+	    alert("Here's the file link: " + files[0].link);
     },
 
     // Optional. Called when the user closes the dialog without selecting a file
@@ -40,6 +42,11 @@ document.getElementById("dropboxChooser").appendChild(button);
 ** stuff for firebase uploading **
 ********************************/
 
-var photogallery = new Firebase('https://glowing-fire-6466.firebaseIO.com/galleries');
+var galleryRef = new Firebase('https://glowing-fire-6466.firebaseIO.com/gallery');
 
-console.log(photogallery);
+galleryRef.push({
+	weddingDate: new Date(),
+	tags: ['wedding', 'vancouver', 'engagement'],
+	title: 'Tyler and Erin',
+	files: imageFiles
+});
