@@ -33,19 +33,26 @@
   <body ng-controller="galleryChooserCtrl">
     <div id="dropboxChooser"></div>
 
-    Tags: <input type="text" name="tags" value="" ng-model="meta.tags"/>
-    Title: <input type="`text" name="title" value="" ng-model="meta.title"/>
-    Password: <input type="text" name="password" value="" ng-model="meta.password"/>
-    <button ng-click="firebasePush()">firebasePush</button>
+
+
     <div class="container">
       
+      <div class="row">
+	Tags: <input type="text" name="tags" value="" ng-model="meta.tags"/>
+	Title: <input type="`text" name="title" value="" ng-model="meta.title"/>
+	Password: <input type="text" name="password" value="" ng-model="meta.password"/>
+	<button ng-click="firebasePush()">firebasePush</button>
+      </div>
+
+    </div>
+
+
+    <div class="container">
       <div class="row">
 	<div class="col-md-12">Title: {{post.title}}</div>
 	<div class="col-md-12">Tags: {{post.tags}}</div>
 	<div class="col-md-12">Password: {{post.password}}</div>
       </div>
-      
-
       <div class="row"> 
 	<div class="col-xs-2" ng-repeat="photo in photos">
 	  <a href="{{photo.link}}">
@@ -54,6 +61,24 @@
 	</div>
       </div>
     </div>
+
+
+    
+    <div class="container">
+      
+      <div class="row" ng-repeat="post in posts">
+	{{post.tags}}<br />{{post.title}}<br />{{post.$id}}<br />
+
+
+      </div>
+      
+
+
+
+    </div>
+    
+
+
 
   </body>
 
