@@ -12,7 +12,7 @@
 
 <body ng-controller="galleryChooserCtrl">
   <div id="dropboxChooser"></div>
-  <button onclick="firebasePush()">firebasePush</button>
+  <button ng-click="firebasePush()">firebasePush</button>
   <ul>
     <li ng-repeat="photo in photos">
       {{photo}}
