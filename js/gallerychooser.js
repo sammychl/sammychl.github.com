@@ -52,11 +52,15 @@ app.controller('galleryChooserCtrl', function($scope, $firebase) {
     $scope.misc = {test:"testing"};
     $scope.firebasePush = function() {
 	console.log('firebasePush');
-	galleryRef.push({
+	$scope.photos.$add({
 	    weddingDate: new Date(),
 	    tags: ['wedding', 'vancouver', 'engagement'],
 	    title: 'Tyler and Erin',
 	    files: imageFiles
+	}).then(function(ref) {
+		var id = ref.name();
+		console.log("added record with id " + id);
+		$scope.photos.$indexFor(id);
 	});
 	
     };
