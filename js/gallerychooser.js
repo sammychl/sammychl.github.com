@@ -53,6 +53,7 @@ app.controller('galleryChooserCtrl', function($scope, $firebase) {
 	$scope.photos = galleryRefSync.$asArray();
 	
 	$scope.firebasePush = function() {
+		console.log('firebasePush');
 		galleryRef.push({
 			weddingDate: new Date(),
 			tags: ['wedding', 'vancouver', 'engagement'],
