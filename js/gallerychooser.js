@@ -63,7 +63,7 @@ app.controller('galleryChooserCtrl', function($scope, $firebase) {
 	}).then(function(ref) {
 		var id = ref.name();
 		console.log("added record with id " + id);
-		$scope.photos = galleriesArr[galleryRefSync.$indexFor(id)].files;
+		$scope.photos = galleriesArr[galleriesArr.$indexFor(id)].files;
 	});
 	
     };
