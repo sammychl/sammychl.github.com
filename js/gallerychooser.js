@@ -53,6 +53,8 @@ app.controller('galleryChooserCtrl', function($scope, $firebase) {
 
 	$scope.photos = [];
 	$scope.meta = {};
+	$scope.posts = galleriesArr;
+	console.log(gallerieArr);
 	$scope.firebasePush = function() {
 		console.log('firebasePush');
 		galleriesArr.$add({
