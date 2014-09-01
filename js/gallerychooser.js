@@ -47,7 +47,7 @@ app.controller('galleryChooserCtrl', function($scope, $firebase) {
     var galleryRef = new Firebase('https://glowing-fire-6466.firebaseIO.com/gallery');
     var galleryRefSync = $firebase(galleryRef);
     
-    $scope.photos = galleryRefSync.$asArray().files;
+    $scope.photos = galleryRefSync.$asArray();
     $scope.misc = {test:"testing"};
     $scope.firebasePush = function() {
 	console.log('firebasePush');
