@@ -11,18 +11,20 @@
 </head>
 
 <body ng-controller="galleryChooserCtrl">
+  <div id="dropboxChooser"></div>
+  <button onclick="firebasePush()">firebasePush</button>
   <ul>
     <li ng-repeat="photo in photos">
       {{photo}}
     </li>
-  <div id="dropboxChooser"></div>
-  <button onclick="firebasePush()">firebasePush</button>
+  </ul>
+
 </body>
 
-  <!-- Dropbox Chooser API -->
-  <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="fzxzn1xwvxwr8zb"></script>
-  <!-- angular main app -->
-  <script type="text/javascript" src="js/gallerychooser.js"></script>
+<!-- Dropbox Chooser API -->
+<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="fzxzn1xwvxwr8zb"></script>
+<!-- angular main app -->
+<script type="text/javascript" src="js/gallerychooser.js"></script>
 
 
 
