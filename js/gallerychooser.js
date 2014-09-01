@@ -1,3 +1,7 @@
+/*******************************
+** stuff for dropbox chooser api**
+******************************/
+
 
 var options = {
 
@@ -30,3 +34,12 @@ var options = {
 
 var button = Dropbox.createChooseButton(options);
 document.getElementById("dropboxChooser").appendChild(button);
+
+
+/********************************
+** stuff for firebase uploading **
+********************************/
+
+var photogallery = new Firebase('https://glowing-fire-6466.firebaseIO.com/galleries');
+
+console.log(photogallery);
