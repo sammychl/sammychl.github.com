@@ -33,11 +33,11 @@
   <body ng-controller="galleryChooserCtrl">
     <div id="dropboxChooser"></div>
     <button ng-click="firebasePush()">firebasePush</button>
-
-    <div class="gallery-item" ng-repeat="photo in photos">
+    <div class="container">
+    <div class="row gallery-item" ng-repeat="photo in photos">
       <img src="{{photo.thumbnailLink}}" alt="thumbnail {{index}}" />
     </div>
-
+    </div>
 
   </body>
 
