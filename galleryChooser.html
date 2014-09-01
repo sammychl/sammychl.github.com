@@ -34,9 +34,11 @@
     <div id="dropboxChooser"></div>
     <button ng-click="firebasePush()">firebasePush</button>
     <div class="container">
-    <div class="row gallery-item" ng-repeat="photo in photos">
-      <img src="{{photo.thumbnailLink}}" alt="thumbnail {{index}}" />
-    </div>
+      <div class="row"> 
+	<div class="col-xs-3" ng-repeat="photo in photos">
+	  <img class="gallery-item" src="{{photo.thumbnailLink}}" alt="thumbnail {{index}}" />
+	</div>
+      </div>
     </div>
 
   </body>
