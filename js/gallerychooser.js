@@ -47,12 +47,15 @@ app.controller('galleryChooserCtrl', function($scope, $firebase) {
     var galleryRef = new Firebase('https://glowing-fire-6466.firebaseIO.com/gallery');
     var galleryRefSync = $firebase(galleryRef);
     
-    $scope.photos = galleryRefSync.$asArray();
-	console.log($scope.photos);
+    var galleriesArr = galleryRefSync.$asArray();
+
     $scope.misc = {test:"testing"};
+
+	$scope.photos = [];
+
     $scope.firebasePush = function() {
 	console.log('firebasePush');
-	$scope.photos.$add({
+	galleriesArr.$add({
 	    weddingDate: new Date(),
 	    tags: ['wedding', 'vancouver', 'engagement'],
 	    title: 'Tyler and Erin',
@@ -60,7 +63,7 @@ app.controller('galleryChooserCtrl', function($scope, $firebase) {
 	}).then(function(ref) {
 		var id = ref.name();
 		console.log("added record with id " + id);
-		$scope.photos.$indexFor(id);
+		$scope.photos = galleriesArr[galleryRefSync.$indexFor(id)].files;
 	});
 	
     };
