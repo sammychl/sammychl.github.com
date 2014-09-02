@@ -54,10 +54,14 @@
 	<div class="col-md-12">Password: {{post.password}}</div>
       </div>
       <div class="row"> 
-	<div class="col-xs-2" ng-repeat="photo in photos">
-	  <a href="{{photo.link}}">
-	    <img class="img-responsive" src="{{photo.thumbnailLink}}" alt="thumbnail {{index}}" />
-	  </a>
+	<div ng-repeat="photo in photos">
+	  <div class="col-xs-10 col-xs-offset-1 col-md-3 boxed-grey">
+	    <div>
+	      <a href="{{photo.link}}">
+		<img class="img-responsive" src="{{photo.thumbnailLink}}" alt="thumbnail {{index}}" />
+	      </a>
+	    </div>
+	  </div>
 	</div>
       </div>
     </div>
@@ -74,12 +78,12 @@
       
       <div class="row">
 	<div ng-repeat="photo in selectedPost.files">
-	  <div class="col-xs-10 col-xs-offset-1 col-md-3 boxes-grey">
+	  <div class="col-xs-10 col-xs-offset-1 col-md-3 boxed-grey">
 	    <div>
-	    <a href="{{photo.link}}">
-	      <img class="img-responsive" src="{{photo.thumbnailLink}}" alt="thumbnail" />
-	    </a>
-	  </div>
+	      <a href="{{photo.link}}">
+		<img class="img-responsive" src="{{photo.thumbnailLink}}" alt="thumbnail" />
+	      </a>
+	    </div>
 	  </div>
 	</div>
       </div>
