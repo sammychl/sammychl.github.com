@@ -61,10 +61,11 @@ app.controller('galleryChooserCtrl', function($scope, $firebase, $firebaseSimple
 	$scope.cred = {email:"", password:""};
 
 	$scope.loginUser = function() {
-		authClient.login('password', {
+		authClient.$login('password', {
 			email: $scope.cred.email,
 			password: $scope.cred.password
 		});
+		console.log(authClient.user);
 	};
 
 
