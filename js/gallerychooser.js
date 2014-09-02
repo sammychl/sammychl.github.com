@@ -8,7 +8,7 @@ var options = {
 	// Required. Called when a user selects an item in the Chooser.
 	success: function(files) {
 		imageFiles = files;
-		alert("Here's the file link: " + files[0].link);
+		alert("Photos successfully selected. Please enter Tags,Title, and Password then click firebasePush");
 	},
 
 	// Optional. Called when the user closes the dialog without selecting a file

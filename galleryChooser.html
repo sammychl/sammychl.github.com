@@ -72,12 +72,12 @@
 	<br />
       </div>
       
-      <div class="row" ng-repeat="photo in selectedPost.files">
-	
-
-	<a href="{{photo.link}}">
-	  <img src="{{photo.thumbnailLink}}" alt="thumbnail" />
-	</a>
+      <div class="row gallery-item" ng-repeat="photo in selectedPost.files">
+	<div class="col-xs-2">
+	  <a href="{{photo.link}}">
+	    <img src="{{photo.thumbnailLink}}" alt="thumbnail" />
+	  </a>
+	</div>
       </div>
       
 
