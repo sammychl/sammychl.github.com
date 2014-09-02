@@ -59,15 +59,15 @@ app.controller('galleryChooserCtrl', function($scope, $firebase, $firebaseSimple
 	var authClient = $firebaseSimpleLogin(galleryRef);
 
 	$scope.cred = {email:"", password:""};
-	$scope.currentUser = {};
+
 	$scope.loginUser = function() {
 		authClient.$login('password', {
 			email: $scope.cred.email,
 			password: $scope.cred.password
 		});
-		$scope.currentUser = authClient.user;
+		
 	};
-
+	$scope.currentUser = authClient.user;
 
 	$scope.photos = [];
 	$scope.meta = {};
