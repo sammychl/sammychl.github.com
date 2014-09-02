@@ -72,12 +72,14 @@
 	<br />
       </div>
       
-      <div class="row gallery-item">
+      <div class="row">
 	<div ng-repeat="photo in selectedPost.files">
-	  <div class="col-xs-2">
+	  <div class="col-xs-12 col-sm-6 col-md-3">
+	    <div class="team boxed-grey">
 	    <a href="{{photo.link}}">
 	      <img src="{{photo.thumbnailLink}}" alt="thumbnail" />
 	    </a>
+	  </div>
 	  </div>
 	</div>
       </div>
