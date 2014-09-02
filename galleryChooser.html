@@ -65,7 +65,6 @@
 
     
     <div class="container">
-      
       <div class="row" ng-repeat="post in posts">
 	<div>Tag: {{post.tags}}</div>
 	<div>Title: {{post.title}}</div>
@@ -73,7 +72,12 @@
 	<br />
       </div>
       
-      {{selectedPostId}}
+      <div class="row" ng-repeat="photo in posts.files">
+	<a href="{{photo.link}}">
+	  <img src="{{photo.thumbnailLink}}" alt="thumbnail" />
+	</a>
+      </div>
+      
 
 
     </div>
