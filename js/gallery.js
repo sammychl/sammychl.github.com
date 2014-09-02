@@ -14,10 +14,14 @@ app.controller('galleryCtrl', function($scope, $firebase) {
 	$scope.meta = {};
 	$scope.posts = galleriesArr;
 	console.log(galleriesArr);
-
+	$scope.security = {password:""};
 	$scope.selectedPost = {};
 	$scope.setSelectedPost = function(id) {
-		$scope.selectedPost = galleriesArr.$getRecord(id);
+		var post = galleriesArr.$getRecord(id);
+		console.log($scope.selectedPost);
+		if (post.password === $scope.security.password) {
+			$scope.selectedPost = post;	
+		}
 		console.log($scope.selectedPost);
 	}; 
 });
