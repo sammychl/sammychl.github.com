@@ -33,12 +33,20 @@
 
   <body ng-controller="galleryChooserCtrl">
     <div id="dropboxChooser"></div>
-    <form ng-submit="loginUser()">
-      <input type="text" name="email" value="email" ng-model="cred.email"/>
-      <input type="test" name="password" value="password" ng-model="cred.password"/>
-      <input type="submit" name="submit" value="submit" />
-    </form>
-    Current Logged In User: {{currentUser.email}}
+    
+    <div class="container">
+      
+      <form class="row" ng-submit="loginUser()">
+	<input type="text" name="email" value="email" ng-model="cred.email"/>
+	<input type="test" name="password" value="password" ng-model="cred.password"/>
+	<input type="submit" name="submit" value="submit" />
+      </form>
+
+      
+      <div class="row">
+	Current Logged In User: {{currentUser.email}}
+      </div>
+    </div>
 
     <div class="container">
       
