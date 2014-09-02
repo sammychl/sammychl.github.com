@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Mobile Studio Photobooth</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/nivo-lightbox.css" rel="stylesheet" />
+    <link href="css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+    <link href="css/animate.css" rel="stylesheet" />
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.19/angular.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/0.8.2/angularfire.min.js"></script>
+
+
+    <!-- Squad theme CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="color/default.css" rel="stylesheet">
+
+  </head>
+
+  <body data-spy="scroll">
+
+    <div class="container">
+      <ul id="gn-menu" class="gn-menu-main">
+	<li class="gn-trigger">
+	  <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+	  <nav class="gn-menu-wrapper">
+	    <div class="gn-scroller">
+	      <ul class="gn-menu">
+		<li class="gn-search-item">
+		  <input placeholder="Search" type="search" class="gn-search">
+		  <a class="gn-icon gn-icon-search"><span>Search</span></a>
+		</li>
+		<li>
+		  <a href="http://lineuppers.com/index.html#about" class="gn-icon gn-icon-download">About</a>
+		</li>
+		<li><a href="http://lineuppers.com/index.html#service" class="gn-icon gn-icon-cog">Service</a></li>
+		<li><a href="http://lineuppers.com/index.html##works" class="gn-icon gn-icon-help">Works</a></li>
+		<li>
+		  <a href="http://lineuppers.com/index.html##contact" class="gn-icon gn-icon-archive">Contact</a>
+		</li>
+	      </ul>
+	    </div><!-- /gn-scroller -->
+	  </nav>
+	</li>
+	<li><a href="index.html">BESIMAGES</a></li>
+	<li><ul class="company-social">
+            <li class="social-facebook"><a href="https://www.facebook.com/besimages" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li class="social-twitter"><a href="https://twitter.com/besimages" target="_blank"><i class="fa fa-twitter"></i></a></li>
+            <li class="social-dribble"><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+            <li class="social-google"><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+        </ul>	</li>
+      </ul>
+    </div>
+
+    <!-- Section: intro 
+    <section id="intro" class="intro">
+      <div class="slogan">
+	<h1>This is BESimages</h1>
+	<p>instantly get awesome pictures for guests to take home</p>
+	<a href="#about" class="btn btn-skin scroll">Learn more</a>
+      </div>	
+    </section>
+    <!-- /Section: intro -->
+
+    <!-- Section: about -->
+    <section id="about" class="home-section text-center bg-gray">
+      <div class="heading-about marginbot-50">
+	<div class="container">
+	  <div class="row">
+	    <div class="col-lg-8 col-lg-offset-2">
+	      
+	      <div class="section-heading">
+		<h2>About us</h2>
+		<p>We specialize in photobooths and customize them to suit your needs, as well as your budget. Our photobooths can be simple, or it can be fancy and extravagant, with red carpets and custom backdrops.</p>
+		<p>We offer a variety of choices by having our professional photographers bring a studio-like environment to your venue, complete with customizable backdrops and professional lighting. Monitors and photo printers would also be on site to provide immediate photo reviewing/slideshows, processing and printing . YES, you will get a copy of your photo in under 60 seconds. To bring the most fun to those who come to us, we offer the most extensive collection of props for anyone who wants to have some fun and to take some silly, yet memorable, pictures.</p>
+	      </div>
+	      
+	    </div>
+	  </div>
+	</div>
+      </div>
+      <div class="container">
+
+        <div class="row">
+	  <div class="col-xs-12 col-sm-12 col-md-4">
+
+            <div class="team boxed-grey">
+              <div class="inner">
+		<h5>Benny Kwok</h5>
+                <p class="subtitle">Cameraman B</p>
+                <div class="avatar"><img src="img/team/2.jpg" alt="" class="img-responsive" /></div>
+              </div>
+
+	    </div>
+          </div>
+	  <div class="col-xs-12 col-sm-12 col-md-4">
+	    
+            <div class="team boxed-grey">
+              <div class="inner">
+		<h5>Eric Leung</h5>
+                <p class="subtitle">Cameraman E</p>
+                <div class="avatar"><img src="img/team/3.jpg" alt="" class="img-responsive" /></div>
+              </div>
+            </div>
+	    
+          </div>
+	  <div class="col-xs-12 col-sm-12 col-md-4">
+	    
+            <div class="team boxed-grey">
+              <div class="inner">
+		<h5>Sammy Li</h5>
+                <p class="subtitle">Cameraman S</p>
+                <div class="avatar"><img src="img/team/4.jpg" alt="" class="img-responsive" /></div>
+              </div>
+            </div>
+	    
+          </div>
+        </div>		
+      </div>
+    </section>
+    <!-- /Section: about -->
+    
+    
+    <!-- Section: services -->
+    <section id="service" class="home-section text-center">
+      
+      <div class="heading-about marginbot-50">
+	<div class="container">
+	  <div class="row">
+	    <div class="col-lg-8 col-lg-offset-2">
+	      
+	      <div class="section-heading">
+		<h2>Our Services</h2>
+		<p>Since we're a bunch of engineers who owns expensive cameras, we are actually capable of quite a bit more than just mobile studios.</p>
+	      </div>
+	      
+	    </div>
+	  </div>
+	</div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3 col-md-3">
+	    
+            <div class="service-box">
+	      <div class="service-icon">
+		<i class="fa fa-rocket fa-3x"></i>
+	      </div>
+	      <div class="service-desc">
+		<h5>Mobile Studio and Photobooth</h5>
+		<p>Hey! This is by far our favorite activity. The tech is built by the team. No other vendors have what we've got. Our photos are high res 300dpi. Our photos are edited on the spot. Our photos are uploaded and available for download. Our photos have frames that are 100% custom designed for each wedding. You get what you pay for. This is not a step-in-box-and-press-button entertainment. This is a \"Wow...professional photos...\" type of deal.</p>
+	      </div>
+            </div>
+	    
+          </div>
+
+	  <div class="col-sm-3 col-md-3">
+	    <div class="service-box">
+	      <div class="service-icon">
+		<i class="fa fa-code fa-3x"></i>
+	      </div>
+	      <div class="service-desc">
+		<h5>Wedding Photography</h5>
+		<p>We know you've talked to a million vendors and is tired, so let's get down to business and skip the wishy washy marketing. Watch one of our videos and you'll know exactly what you'll get. Imagine yourself in those pictures, and you'll know whether we are the right fit or not. They're only about 2.5 minutes long, so at least enjoy the music if you didn't think the photos are your style.  We don't hire freelancers to show up on our behalf. The same three cameramen above will appear at your wedding.</p>
+	      </div>
+            </div>
+	    
+          </div>
+	  <div class="col-sm-3 col-md-3">
+	    
+            <div class="service-box">
+	      <div class="service-icon">
+		<i class="fa fa-suitcase fa-3x"></i>
+	      </div>
+	      <div class="service-desc">
+		<h5>Web Design</h5>
+		<p>Know what, we're actually all full-time engineers from UBC and SFU. Photography is our passion, but we know how to build bridges, apps, and websites too. You might want a special website for your event, an app for sharing photos, or how about a website like www.MYNAME.com? Yes, we can do it all (might be a bit involved if you really did want a bridge), so get creative and let us know about your fun engineering/tech ideas!</p>
+	      </div>
+            </div>
+
+          </div>
+	  <div class="col-sm-3 col-md-3">
+
+            <div class="service-box">
+	      <div class="service-icon">
+		<i class="fa fa-cog fa-3x"></i>
+	      </div>
+	      <div class="service-desc">
+		<h5>Non-profits</h5>
+		<p>Every year we participate in various organizations to assist with non-profits. We've done photoshoots for childrens of adopted families, websites for business associations, and photobooths for chambers of commerce. We often get inquiries as to whether we can help. Answer: We're happy to give back and help the community! </p>
+	      </div>
+            </div>
+	    
+          </div>
+	  
+        </div>		
+      </div>
+    </section>
+    <!-- /Section: services -->
+    
+    
+    <!-- Section: works -->
+    <section id="works" class="home-section text-center bg-gray">
+      <div class="heading-works marginbot-50">
+	<div class="container">
+	  <div class="row">
+	    <div class="col-lg-8 col-lg-offset-2">
+	      
+	      <div class="section-heading">
+		<h2>Recent Works</h2>
+		<p>We love what we do. We do what we love. Proof below.</p>
+	      </div>
+	      
+	    </div>
+	  </div>
+	</div>
+      </div>
+      <div class="container">
+
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12" >
+
+            <div class="row gallery-item">
+              <div class="col-md-3">
+		<a href="http://www.vimeo.com/71071717" title="E&T Wedding" data-lightbox-gallery="gallery1">
+		  <img src="img/works/1.jpg" class="img-responsive" alt="Vimeo" />
+		</a>
+	      </div>
+	      <div class="col-md-3">
+		<a href="img/works/2.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+		  <img src="img/works/2.jpg" class="img-responsive" alt="img">
+		</a>
+	      </div>
+	      <div class="col-md-3">
+		<a href="img/works/3.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+		  <img src="img/works/3.jpg" class="img-responsive" alt="img">
+		</a>
+	      </div>
+	      <div class="col-md-3">
+		<a href="img/works/4.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+		  <img src="img/works/4.jpg" class="img-responsive" alt="img">
+		</a>
+	      </div>
+	      <div class="col-md-3">
+		<a href="img/works/5.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+		  <img src="img/works/5.jpg" class="img-responsive" alt="img">
+		</a>
+	      </div>
+	      <div class="col-md-3">
+		<a href="img/works/6.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+		  <img src="img/works/6.jpg" class="img-responsive" alt="img">
+		</a>
+	      </div>
+	      <div class="col-md-3">
+		<a href="img/works/7.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+		  <img src="img/works/7.jpg" class="img-responsive" alt="img">
+		</a>
+	      </div>
+	      <div class="col-md-3">
+		<a href="img/works/8.jpg" title="This is an image title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+		  <img src="img/works/8.jpg" class="img-responsive" alt="img">
+		</a>
+	      </div>
+	    </div>
+	    
+          </div>
+        </div>	
+      </div>
+    </section>
+    <!-- /Section: works -->
+
+    <!-- Section: contact -->
+    <section id="contact" class="home-section text-center">
+      <div class="heading-contact marginbot-50">
+	<div class="container">
+	  <div class="row">
+	    <div class="col-lg-8 col-lg-offset-2">
+	      
+	      <div class="section-heading">
+		<h2>Get in touch</h2>
+		<p>I'm sure you would like to meet us in person some time before your event, so please SMS, whats'app, email, or of course phone us :) Happy to take calls after business hours or weekends!</p>
+	      </div>
+	      
+	    </div>
+	  </div>
+	</div>
+      </div>
+      <div class="container">
+
+	<div class="row">
+          <div class="col-lg-8 col-md-offset-2">
+            <div class="boxed-grey">
+              <div class="widget-contact row">
+		<div class="col-lg-6">
+		  <address>
+		    <strong>Ambitous Minds Inc.</strong><br>
+		    Burnaby, BC<br>
+		    Canada<br>
+		    <abbr title="Phone">P:</abbr> (604) 961-7355
+		  </address>
+		</div>
+		
+		<div class="col-lg-6">
+		  <address>
+		    <strong>Email</strong><br>
+		    <a href="mailto:#">benny@besimages.com</a><br />
+		    <a href="mailto:#">eric@besimages.com</a><br />
+		    <a href="mailto:#">sammy@besimages.com</a>
+		  </address>	
+		  
+		</div>
+	      </div>  
+            </div>
+	    
+	    
+          </div>
+
+	</div>	
+
+      </div>
+    </section>
+    <!-- /Section: contact -->
+
+    <footer>
+      <div class="container">
+	<div class="row">
+	  <div class="col-md-12 col-lg-12">
+	    
+	    <p>Copyright &copy; 2014 BESimages</p>
+	  </div>
+	</div>	
+      </div>
+    </footer>
+
+    <!-- Core JavaScript Files -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>	
+    <script src="js/classie.js"></script>
+    <script src="js/gnmenu.js"></script>
+    <script src="js/jquery.scrollTo.js"></script>
+    <script src="js/nivo-lightbox.min.js"></script>
+    <script src="js/stellar.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/custom.js"></script>
+
+  </body>
+
+</html>
