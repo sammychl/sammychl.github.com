@@ -883,6 +883,10 @@ footer a:hover {
 		padding:100px 0 60px;
 		
 	}
+	.img-responsive.img-center {
+	    display: table;
+	    margin: 0 auto;
+	}
 	
 }
 
