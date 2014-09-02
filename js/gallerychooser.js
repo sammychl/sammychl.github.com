@@ -50,24 +50,28 @@ function rawDownload (imageFiles) {
 	});
 	return imageFiles;
 
-};
+}
 
-app.controller('galleryChooserCtrl', function($scope, $firebase) {
-	console.log('hello');
+app.controller('galleryChooserCtrl', function($scope, $firebase, $firebaseSimpleLogin) {
 	var galleryRef = new Firebase('https://glowing-fire-6466.firebaseIO.com/gallery');
 	var galleryRefSync = $firebase(galleryRef);
-	
 	var galleriesArr = galleryRefSync.$asArray();
+	var authClient = $firebaseSimpleLogin(galleryRef);
 
-	$scope.misc = {test:"testing"};
+	$scope.cred = {email:"", password:""};
+
+	$scope.loginUser = function() {
+		authClient.login('password', {
+			email: $scope.cred.email,
+			password: $scope.cred.password
+		});
+	};
+
 
 	$scope.photos = [];
 	$scope.meta = {};
 	$scope.posts = galleriesArr;
 	console.log(galleriesArr);
-
-
-
 
 	$scope.selectedPost = {};
 
@@ -93,9 +97,7 @@ app.controller('galleryChooserCtrl', function($scope, $firebase) {
 			$scope.post = galleriesArr[galleriesArr.$indexFor(id)];
 		});
 		
-	};
-	
-	
+	};	
 });
 
 
