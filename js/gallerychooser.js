@@ -20,7 +20,7 @@ var options = {
 	// Optional. "preview" (default) is a preview link to the document for sharing,
 	// "direct" is an expiring link to download the contents of the file. For more
 	// information about link types, see Link types below.
-	linkType: "direct", // or "direct"
+	linkType: "preview", // or "direct"
 
 	// Optional. A value of false (default) limits selection to a single file, while
 	// true enables multiple file selection.
@@ -43,9 +43,10 @@ document.getElementById("dropboxChooser").appendChild(button);
 var app = angular.module('galleryChooser', ['firebase']);
 
 
-function thumbEnlarge (imageFiles) {
+function rawDownload (imageFiles) {
 	angular.forEach(imageFiles, function(file) {
 		file.thumbnailLink = file.thumbnailLink.replace("bounding_box=75&mode=fit", "bounding_box=256&mode=fit");
+		file.link = file.link.replace("?dl=0", "?raw=1");
 	});
 	return imageFiles;
 
@@ -84,7 +85,7 @@ app.controller('galleryChooserCtrl', function($scope, $firebase) {
 			tags: $scope.meta.tags,
 			title: $scope.meta.title,
 			password: $scope.meta.password,
-			files: thumbEnlarge(imageFiles)
+			files: rawDownload(imageFiles)
 		}).then(function(ref) {
 			var id = ref.name();
 			console.log("added record with id " + id);
