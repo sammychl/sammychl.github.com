@@ -45,7 +45,7 @@ var app = angular.module('galleryChooser', ['firebase']);
 
 function thumbEnlarge (imageFiles) {
 	angular.forEach(imageFiles, function(file) {
-		file.thumbnailLink = file.thumbnailLink.replace("bounding_box=75&mode=fit", "bounding_box=256&mode=fit_one_and_overflow");
+		file.thumbnailLink = file.thumbnailLink.replace("bounding_box=75&mode=fit", "bounding_box=256&mode=fit");
 	});
 	return imageFiles;
 
