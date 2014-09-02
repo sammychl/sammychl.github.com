@@ -42,6 +42,15 @@ document.getElementById("dropboxChooser").appendChild(button);
 
 var app = angular.module('galleryChooser', ['firebase']);
 
+
+function thumbEnlarge (imageFiles) {
+	angular.forEach(imageFiles, function(file) {
+		file.thumbnailLink = file.thumbnailLink.replace("bounding_box=75&mode=fit", "bounding_box=256&mode=fit_one_and_overflow");
+	});
+	return imageFiles;
+
+};
+
 app.controller('galleryChooserCtrl', function($scope, $firebase) {
 	console.log('hello');
 	var galleryRef = new Firebase('https://glowing-fire-6466.firebaseIO.com/gallery');
@@ -75,7 +84,7 @@ app.controller('galleryChooserCtrl', function($scope, $firebase) {
 			tags: $scope.meta.tags,
 			title: $scope.meta.title,
 			password: $scope.meta.password,
-			files: imageFiles
+			files: thumbEnlarge(imageFiles)
 		}).then(function(ref) {
 			var id = ref.name();
 			console.log("added record with id " + id);
