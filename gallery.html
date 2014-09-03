@@ -119,10 +119,10 @@
 		 <div class="col-lg-8 col-lg-offset-2">
 		   
 		   <div class="section-heading">
-		     <form ng-submit=checkPassword()>
-		     <div class="alert alert-danger" ng-show="security.passwordValid === false">{{security.passwordError}}</div>
-		     <div ng-show="security.passwordValid === false && selectedPost">Password for post: <input type="text" name="password" value="" ng-model="security.password"/></div>
-		     <input type="submit" name="submit" value="submit" />
+		     <form ng-submit="checkPassword()" ng-show="security.passwordValid === false && selectedPost">
+		     <div class="alert alert-danger">{{security.passwordError}}</div>
+		     <div>Password for post: <input type="text" name="password" value="" ng-model="security.password"/></div>
+		     <span><input type="submit" name="submit" value="submit" /></span>
 		     </form>	 
 
 		     <h2>Title: {{selectedPost.title}}</h2>
