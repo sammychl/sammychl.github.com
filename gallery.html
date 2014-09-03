@@ -121,8 +121,7 @@
 		   <div class="section-heading">
 		     <form ng-submit="checkPassword()" ng-show="security.passwordValid === false && selectedPost">
 		     <div class="alert alert-danger">{{security.passwordError}}</div>
-		     <div>Password for post: <input type="text" name="password" value="" ng-model="security.password"/></div>
-		     <span><input type="submit" name="submit" value="submit" /></span>
+		     <span>Password for post: <input type="text" name="password" value="" ng-model="security.password"/>   <input type="submit" name="submit" value="submit" /></span>
 		     </form>	 
 
 		     <h2>Title: {{selectedPost.title}}</h2>
