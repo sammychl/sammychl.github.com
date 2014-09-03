@@ -89,7 +89,7 @@
 		     <div>
 		       Refine List: <input type="text" name="search" value="search list" ng-model="galleryListSearch"/>
 		     </div>
-		     Password for post: <input type="text" name="password" value="" ng-model="security.password"/>
+
 		     <ul class="list-group">
 		       <li class="list-group-item" ng-repeat="post in posts">
 			 <a href="" ng-click="setSelectedPost(post.$id)">{{post.title}} - {{post.date}} </a>
@@ -110,7 +110,7 @@
 	 <!-- /Section: about -->
 
 
-	 <!-- Section: services -->
+	 <!-- Section: post -->
 	 <section id="post" class="home-section text-center">
 	   
 	   <div class="heading-about marginbot-50">
@@ -119,8 +119,13 @@
 		 <div class="col-lg-8 col-lg-offset-2">
 		   
 		   <div class="section-heading">
+		     
+		     <div class="alert alert-danger" ng-show="security.validPassword === false">Password not valid</div>
+		     <div ng-show="security.validPassword === false && selectedPost">Password for post: <input type="text" name="password" value="" ng-model="security.password"/></div>		 
+
 		     <h2>Title: {{selectedPost.title}}</h2>
 		     <p>Desc: {{selectedPost.description}}</p>
+		     
 		   </div>
 		   
 		 </div>
