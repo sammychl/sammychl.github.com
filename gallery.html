@@ -91,7 +91,7 @@
 		     </div>
 
 		     <ul class="list-group">
-		       <li class="list-group-item" ng-repeat="post in posts">
+		       <li class="list-group-item" ng-repeat="post in posts | galleryListSearch">
 			 <a href="" ng-click="setSelectedPost(post.$id)">{{post.title}} - {{post.date}} </a>
 		       </li>
 		     </ul>
