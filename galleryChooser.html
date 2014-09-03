@@ -63,7 +63,7 @@
 <hr />
 
 
-    <div class="container">
+    <div class="container" ng-show="currentUser.email == 'sammychl@hotmail.com'">
       <div class="row">
 	<div class="col-md-12">Title: {{post.title}}</div>
 	<div class="col-md-12">Tags: {{post.tags}}</div>
@@ -84,10 +84,11 @@
 
 
     
-    <div class="container">
+    <div class="container" ng-show="currentUser.email == 'sammychl@hotmail.com'">
       <div class="row" ng-repeat="post in posts">
 	<div>Tag: {{post.tags}}</div>
 	<div>Title: {{post.title}}</div>
+	<div>Password: {{post.password}}</div>
 	<a href="#"><div ng-click="setSelectedPost(post.$id)">Id: {{post.$id}}</div></a>
 	<br />
       </div>
