@@ -120,8 +120,8 @@
 		   
 		   <div class="section-heading">
 		     
-		     <div class="alert alert-danger" ng-show="security.validPassword === false">Password not valid</div>
-		     <div ng-show="security.validPassword === false && selectedPost">Password for post: <input type="text" name="password" value="" ng-model="security.password"/></div>		 
+		     <div class="alert alert-danger" ng-show="security.passwordValid === false">Password not valid</div>
+		     <div ng-show="security.passwordValid === false && selectedPost">Password for post: <input type="text" name="password" value="" ng-model="security.password"/></div>		 
 
 		     <h2>Title: {{selectedPost.title}}</h2>
 		     <p>Desc: {{selectedPost.description}}</p>
