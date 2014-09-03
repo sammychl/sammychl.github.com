@@ -139,7 +139,7 @@
 	  <ul>
 	    <li class="col-sm-3 col-md-3 boxed-grey" ng-repeat="photo in selectedPost.files">
 	      <a ng-click="openLightboxModal($index)">
-		<img src="photo.thumbnailLink" alt="img-thumbnail" />
+		<img src="{{photo.thumbnailLink}}" alt="img-thumbnail" />
 	      </a>
 	      <!--   <a href="{{photo.link}}" title="{{photo.name}}" data-lightbox-gallery="gallery1"> -->
 	      <!-- 	<img class="img-responsive center-block" src="{{photo.thumbnailLink}}" alt="thumbnail" /> -->
