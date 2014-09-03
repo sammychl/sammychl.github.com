@@ -26,7 +26,7 @@ app.controller('galleryCtrl', function($scope, $firebase, Lightbox) {
 	}
 
 	$scope.openLightboxModal = function(index) {
-		Lightbox.openModal($scope.selectedPost.files);
+		Lightbox.openModal($scope.selectedPost.files, index);
 	};
 
 
