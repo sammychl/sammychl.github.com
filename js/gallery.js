@@ -2,7 +2,7 @@
  ** stuff for firebase uploading **
  ********************************/
 
-var app = angular.module('gallery', ['firebase']);
+var app = angular.module('gallery', ['firebase', 'bootstrapLightbox']);
 
 app.controller('galleryCtrl', function($scope, $firebase) {
 	var galleryRef = new Firebase('https://glowing-fire-6466.firebaseIO.com/gallery');
@@ -16,13 +16,27 @@ app.controller('galleryCtrl', function($scope, $firebase) {
 	console.log(galleriesArr);
 	$scope.security = {password:"", passwordValid:false};
 	$scope.selectedPost = false;
+
+	function matchPostToLightboxApi (post) {
+		angular.forEach(post.files, function(image) {
+			image.url = image.link;
+			image.caption = image.name;
+		});
+		return post;
+	}
+
+	$scope.openLightboxModal = function(index) {
+		Lightbox.openModal($scope.selectedPost.files);
+	};
+
+
 	$scope.setSelectedPost = function(id) {
 		post = galleriesArr.$getRecord(id);
 		console.log($scope.selectedPost);
 		if (post.password === $scope.security.password || post.password === "") {
 			$scope.security.passwordValid = true;
 			$scope.security.passwordError = "";
-			$scope.selectedPost = post;
+			$scope.selectedPost = matchPostToLightboxApi(post);
 		}
 		else {
 			$scope.security.passwordValid = false;
@@ -36,7 +50,7 @@ app.controller('galleryCtrl', function($scope, $firebase) {
 		if (post.password === $scope.security.password || post.password === "") {
 			$scope.security.passwordValid = true;
 			$scope.security.passwordError = "";
-			$scope.selectedPost = post;
+			$scope.selectedPost = matchPostToLightboxApi(post);
 		}
 		else {
 			$scope.security.passwordValid = false;

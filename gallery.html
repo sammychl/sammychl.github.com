@@ -14,8 +14,6 @@
 
     <!-- Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="css/nivo-lightbox.css" rel="stylesheet" />
-    <link href="css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
     <link href="css/animate.css" rel="stylesheet" />
 
     <!-- AngularJS -->
@@ -26,9 +24,22 @@
     <script src="https://cdn.firebase.com/libs/angularfire/0.8.2/angularfire.min.js"></script>
 
 
+    <!-- lightbox dependencies -->
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="bower_components/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.js"></script>
+
+
     <!-- Squad theme CSS -->
     <link href="css/style.css" rel="stylesheet">
     <link href="color/default.css" rel="stylesheet">
+
+    <!-- lightbox stylesheets -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css">
+    <link rel="stylesheet" href="bower_components/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.css">
+
 
   </head>
 
@@ -67,162 +78,155 @@
       </ul>
     </div>
 
-    <!-- Section: intro 
-	 <section id="intro" class="intro">
-	   <div class="slogan">
-	     <h1>This is BESimages</h1>
-	     <p>instantly get awesome pictures for guests to take home</p>
-	     <a href="#about" class="btn btn-skin scroll">Learn more</a>
-	   </div>	
-	 </section>
-	 <!-- /Section: intro -->
+    <!-- Section: posts -->
+    <section id="gallery" class="home-section text-center bg-gray">
+      <div class="heading-about marginbot-50">
+	<div class="container">
+	  <div class="row">
+	    <div class="col-lg-8 col-lg-offset-2">
+	      
+	      <div class="section-heading">
+		<h2>Gallery</h2>
+		<div>
+		  Refine List: <input type="text" name="search" value="search list" ng-model="galleryListSearch"/>
+		</div>
 
-	 <!-- Section: about -->
-	 <section id="gallery" class="home-section text-center bg-gray">
-	   <div class="heading-about marginbot-50">
-	     <div class="container">
-	       <div class="row">
-		 <div class="col-lg-8 col-lg-offset-2">
-		   
-		   <div class="section-heading">
-		     <h2>Gallery</h2>
-		     <div>
-		       Refine List: <input type="text" name="search" value="search list" ng-model="galleryListSearch"/>
-		     </div>
-
-		     <ul class="list-group">
-		       <li class="list-group-item" ng-repeat="post in posts | filter:galleryListSearch">
-			 <a href="" ng-click="setSelectedPost(post.$id)">{{post.title}} - ({{post.tags}}) {{post.date}} </a>
-		       </li>
-		     </ul>
+		<ul class="list-group">
+		  <li class="list-group-item" ng-repeat="post in posts | filter:galleryListSearch">
+		    <a href="" ng-click="setSelectedPost(post.$id)">{{post.title}} - ({{post.tags}}) {{post.date}} </a>
+		  </li>
+		</ul>
 
 
-		   </div>
+	      </div>
 
 
-		 </div>
-		 
-	       </div>
-	     </div>
-	   </div>
+	    </div>
+	    
+	  </div>
+	</div>
+      </div>
 
-	 </section>
-	 <!-- /Section: about -->
+    </section>
+    <!-- /Section: posts -->
 
 
-	 <!-- Section: post -->
-	 <section id="post" class="home-section text-center">
-	   
-	   <div class="heading-about marginbot-50">
-	     <div class="container">
-	       <div class="row">
-		 <div class="col-lg-8 col-lg-offset-2">
-		   
-		   <div class="section-heading">
-		     <form ng-submit="checkPassword()" ng-show="security.passwordValid === false && selectedPost">
-		     <div class="alert alert-danger">{{security.passwordError}}</div>
-		     <span>Password for post: <input type="text" name="password" value="" ng-model="security.password"/>   <input type="submit" name="submit" value="submit" /></span>
-		     </form>	 
+    <!-- Section: post -->
+    <section id="post" class="home-section text-center">
+      
+      <div class="heading-about marginbot-50">
+	<div class="container">
+	  <div class="row">
+	    <div class="col-lg-8 col-lg-offset-2">
+	      
+	      <div class="section-heading">
+		<form ng-submit="checkPassword()" ng-show="security.passwordValid === false && selectedPost">
+		  <div class="alert alert-danger">{{security.passwordError}}</div>
+		  <span>Password for post: <input type="text" name="password" value="" ng-model="security.password"/>   <input type="submit" name="submit" value="submit" /></span>
+		</form>	 
 
-		     <h2>Title: {{selectedPost.title}}</h2>
-		     <p>Desc: {{selectedPost.description}}</p>
-		     
-		   </div>
-		   
-		 </div>
-	       </div>
-	     </div>
-	   </div>
-	   <div class="container">
-	     <div class="row">
-	       <div class="col-sm-3 col-md-3 boxed-grey" ng-repeat="photo in selectedPost.files">
-		 <div>
-		   <a href="{{photo.link}}" title="{{photo.name}}" data-lightbox-gallery="gallery1">
-		     <img class="img-responsive center-block" src="{{photo.thumbnailLink}}" alt="thumbnail" />
-		   </a>
-		 </div>		 
-	       </div>
-	     </div>		
-	   </div>
-	 </section>
-	 <!-- /Section: services -->
+		<h2>Title: {{selectedPost.title}}</h2>
+		<p>Desc: {{selectedPost.description}}</p>
+		
+	      </div>
+	      
+	    </div>
+	  </div>
+	</div>
+      </div>
+      <div class="container">
+	<div class="row gallery-item">
+	  <ul>
+	    <li class="col-sm-3 col-md-3 boxed-grey" ng-repeat="photo in selectedPost.files">
+	      <a ng-click="openLightboxModal($index)">
+		<img src="photo.thumbnailLink" alt="img-thumbnail" />
+	      </a>
+	      <!--   <a href="{{photo.link}}" title="{{photo.name}}" data-lightbox-gallery="gallery1"> -->
+	      <!-- 	<img class="img-responsive center-block" src="{{photo.thumbnailLink}}" alt="thumbnail" /> -->
+	      <!--   </a> -->
+	      <!-- </div> -->		 
+	    </li>
+	  </ul>		
+	</div>
+    </section>
+    <!-- /Section: services -->
 
-	 <!-- Section: contact -->
-	 <section id="contact" class="home-section text-center bg-gray">
-	   <div class="heading-contact marginbot-50">
-	     <div class="container">
-	       <div class="row">
-		 <div class="col-lg-8 col-lg-offset-2">
-		   
-		   <div class="section-heading">
-		     <h2>Get in touch</h2>
-		     <p>I'm sure you would like to meet us in person some time before your event, so please SMS, whats'app, email, or of course phone us :) Happy to take calls after business hours or weekends!</p>
-		   </div>
-		   
-		 </div>
-	       </div>
-	     </div>
-	   </div>
-	   <div class="container">
+    <!-- Section: contact -->
+    <section id="contact" class="home-section text-center bg-gray">
+      <div class="heading-contact marginbot-50">
+	<div class="container">
+	  <div class="row">
+	    <div class="col-lg-8 col-lg-offset-2">
+	      
+	      <div class="section-heading">
+		<h2>Get in touch</h2>
+		<p>I'm sure you would like to meet us in person some time before your event, so please SMS, whats'app, email, or of course phone us :) Happy to take calls after business hours or weekends!</p>
+	      </div>
+	      
+	    </div>
+	  </div>
+	</div>
+      </div>
+      <div class="container">
 
-	     <div class="row">
-	       <div class="col-lg-8 col-md-offset-2">
-		 <div class="boxed-grey">
-		   <div class="widget-contact row">
-		     <div class="col-lg-6">
-		       <address>
-			 <strong>Ambitous Minds Inc.</strong><br>
-			 Burnaby, BC<br>
-			 Canada<br>
-			 <abbr title="Phone">P:</abbr> (604) 961-7355
-		       </address>
-		     </div>
-		     
-		     <div class="col-lg-6">
-		       <address>
-			 <strong>Email</strong><br>
-			 <a href="mailto:#">benny@besimages.com</a><br />
-			 <a href="mailto:#">eric@besimages.com</a><br />
-			 <a href="mailto:#">sammy@besimages.com</a>
-		       </address>	
-		       
-		     </div>
-		   </div>  
-		 </div>
-		 
-		 
-	       </div>
+	<div class="row">
+	  <div class="col-lg-8 col-md-offset-2">
+	    <div class="boxed-grey">
+	      <div class="widget-contact row">
+		<div class="col-lg-6">
+		  <address>
+		    <strong>Ambitous Minds Inc.</strong><br>
+		    Burnaby, BC<br>
+		    Canada<br>
+		    <abbr title="Phone">P:</abbr> (604) 961-7355
+		  </address>
+		</div>
+		
+		<div class="col-lg-6">
+		  <address>
+		    <strong>Email</strong><br>
+		    <a href="mailto:#">benny@besimages.com</a><br />
+		    <a href="mailto:#">eric@besimages.com</a><br />
+		    <a href="mailto:#">sammy@besimages.com</a>
+		  </address>	
+		  
+		</div>
+	      </div>  
+	    </div>
+	    
+	    
+	  </div>
 
-	     </div>	
+	</div>	
 
-	   </div>
-	 </section>
-	 <!-- /Section: contact -->
+      </div>
+    </section>
+    <!-- /Section: contact -->
 
-	 <footer>
-	   <div class="container">
-	     <div class="row">
-	       <div class="col-md-12 col-lg-12">
-		 
-		 <p>Copyright &copy; 2014 BESimages</p>
-	       </div>
-	     </div>	
-	   </div>
-	 </footer>
+    <footer>
+      <div class="container">
+	<div class="row">
+	  <div class="col-md-12 col-lg-12">
+	    
+	    <p>Copyright &copy; 2014 BESimages</p>
+	  </div>
+	</div>	
+      </div>
+    </footer>
 
-	 <!-- Core JavaScript Files -->
-	 <script src="js/jquery.min.js"></script>
-	 <script src="js/bootstrap.min.js"></script>
-	 <script src="js/jquery.easing.min.js"></script>	
-	 <script src="js/classie.js"></script>
-	 <script src="js/gnmenu.js"></script>
-	 <script src="js/jquery.scrollTo.js"></script>
-	 <script src="js/nivo-lightbox.min.js"></script>
-	 <script src="js/stellar.js"></script>
-	 <!-- Custom Theme JavaScript -->
-	 <script src="js/custom.js"></script>
-	 <!-- Angular Main app -->
-	 <script type="text/javascript" src="js/gallery.js"></script>
+    <!-- Core JavaScript Files -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>	
+    <script src="js/classie.js"></script>
+    <script src="js/gnmenu.js"></script>
+    <script src="js/jquery.scrollTo.js"></script>
+    
+    <script src="js/stellar.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/custom.js"></script>
+    <!-- Angular Main app -->
+    <script type="text/javascript" src="js/gallery.js"></script>
 
   </body>
 
