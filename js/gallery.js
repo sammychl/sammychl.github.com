@@ -4,7 +4,7 @@
 
 var app = angular.module('gallery', ['firebase', 'bootstrapLightbox']);
 
-app.controller('galleryCtrl', function($scope, $firebase) {
+app.controller('galleryCtrl', function($scope, $firebase, Lightbox) {
 	var galleryRef = new Firebase('https://glowing-fire-6466.firebaseIO.com/gallery');
 	var galleryRefSync = $firebase(galleryRef);
 	var galleriesArr = galleryRefSync.$asArray();
