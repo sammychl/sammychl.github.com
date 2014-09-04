@@ -35,7 +35,7 @@
 
     
     <div class="container">
-    <div id="dropboxChooser"></div>      
+      <div id="dropboxChooser"></div>      
       <form class="row" ng-submit="loginUser()">
 	<input type="text" name="email" value="email" ng-model="cred.email" placeholder="email"/>
 	<input type="test" name="password" value="password" ng-model="cred.password" placeholder="password"/>
@@ -69,12 +69,12 @@
 	    <tt>Description {{firebasePush.description.$error}}</tt>
 	  </div>
 	</div>
-	  <input type="submit">Firebase Push</button>
+	<input type="submit">Firebase Push</input>
       </form>
 
     </div>
-<hr />
-<hr />
+    <hr />
+    <hr />
 
 
     <div class="container" ng-show="currentUser.email == 'sammychl@hotmail.com'">
@@ -97,7 +97,7 @@
     </div>
 
 
-    
+
     <div class="container" ng-show="currentUser.email == 'sammychl@hotmail.com'">
       <div class="row" ng-repeat="post in posts">
 	<div>Tag: {{post.tags}}</div>
