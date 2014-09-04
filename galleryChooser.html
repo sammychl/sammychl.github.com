@@ -51,21 +51,27 @@
 
     <div class="container">
       
-      <div class="row">
+      <form name="firebasePush" class="row" ng-submit="firebasePush()">
 	
 	<div class="col-md-12">
-	  Tags: <input type="text" name="tags" value="" ng-model="meta.tags"/>
-	  Title: <input type="`text" name="title" value="" ng-model="meta.title"/>
-	  Password: <input type="text" name="password" value="" ng-model="meta.password"/>
+	  Tags: <input type="text" name="tags" value="" ng-model="meta.tags" required/>
+	  Title: <input type="`text" name="title" value="" ng-model="meta.title" required/>
+	  Password: <input type="text" name="password" value="" ng-model="meta.password" required/>
 	  
 	</div>
 	
 	<div class="col-md-12">
-	  Description: <textarea type="text" name="description" value="" ng-model="meta.description"/>
-	  <button ng-click="firebasePush()">firebasePush</button>
+	  Description: <textarea type="text" name="description" value="" ng-model="meta.description" required/>
+	  <div ng-show="firebasePush.tags.$error || firebasePush.title.$error || firebasePush.password.$error ||firebasePush.description.$error">
+	    <tt>Tags {{firebasePush.tags.$error}}</tt>
+	    <tt>Title {{firebasePush.title.$error}}</tt>
+	    <tt>Password {{firebasePush.password.$error}}</tt>
+	    <tt>Description {{firebasePush.description.$error}}</tt>
+	  </div>
+	  <input type="submit">Firebase Push</button>
 	</div>
 
-	</div>
+      </form>
 
     </div>
 <hr />
