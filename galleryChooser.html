@@ -62,7 +62,7 @@
 	
 	<div class="col-md-12">
 	  Description: 
-	  <textarea type="text" name="description" value="" ng-model="meta.description" />
+	  <textarea type="text" name="description" value="" ng-model="meta.description" required />type description here </textarea>
 	  <div ng-show="firebasePush.tags.$error || firebasePush.title.$error || firebasePush.password.$error || firebasePush.description.$error"> 
 	    <p>Tags {{firebasePush.tags.$error}}</p>
 	    <p>Title {{firebasePush.title.$error}}</p>
