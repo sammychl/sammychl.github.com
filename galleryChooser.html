@@ -52,11 +52,20 @@
     <div class="container">
       
       <div class="row">
-	Tags: <input type="text" name="tags" value="" ng-model="meta.tags"/>
-	Title: <input type="`text" name="title" value="" ng-model="meta.title"/>
-	Password: <input type="text" name="password" value="" ng-model="meta.password"/>
-	<button ng-click="firebasePush()">firebasePush</button>
-      </div>
+	
+	<div class="col-md-12">
+	  Tags: <input type="text" name="tags" value="" ng-model="meta.tags"/>
+	  Title: <input type="`text" name="title" value="" ng-model="meta.title"/>
+	  Password: <input type="text" name="password" value="" ng-model="meta.password"/>
+	  
+	</div>
+	
+	<div class="col-md-12">
+	  Description: <input style="resize:both;" type="text" name="description" value="" ng-model="meta.description"/>
+	  <button ng-click="firebasePush()">firebasePush</button>
+	</div>
+
+	</div>
 
     </div>
 <hr />

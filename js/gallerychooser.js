@@ -90,6 +90,7 @@ app.controller('galleryChooserCtrl', function($scope, $firebase, $firebaseSimple
 			tags: $scope.meta.tags,
 			title: $scope.meta.title,
 			password: $scope.meta.password,
+			description: $scope.meta.description,
 			files: rawDownload(imageFiles)
 		}).then(function(ref) {
 			var id = ref.name();
