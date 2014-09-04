@@ -113,12 +113,10 @@
 
     <!-- Section: post -->
     <section id="post" class="home-section text-center">
-      
       <div class="heading-about marginbot-50">
 	<div class="container">
 	  <div class="row">
 	    <div class="col-lg-8 col-lg-offset-2">
-	      
 	      <div class="section-heading">
 		<form ng-submit="checkPassword()" ng-show="security.passwordValid === false && selectedPost">
 		  <div class="alert alert-danger">{{security.passwordError}}</div>
@@ -137,10 +135,10 @@
       <div class="container">
 	<div class="row gallery-item">
 	  <ul>
-	    <li class="col-sm-3 col-md-3 boxed-grey" ng-repeat="photo in selectedPost.files">
+	    <li class="col-sm-3 col-md-3" ng-repeat="photo in selectedPost.files">
 	      <a ng-click="openLightboxModal($index)">
 		{{index}}
-		<img class="img-responsive center-block" src="{{photo.thumbnailLink}}" alt="img-thumbnail" />
+		<img class="img-responsive center-block boxed-grey" src="{{photo.thumbnailLink}}" alt="img-thumbnail" />
 	      </a>
 	      <!--   <a href="{{photo.link}}" title="{{photo.name}}" data-lightbox-gallery="gallery1"> -->
 	      <!-- 	<img class="img-responsive center-block" src="{{photo.thumbnailLink}}" alt="thumbnail" /> -->
