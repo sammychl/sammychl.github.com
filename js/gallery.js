@@ -60,3 +60,25 @@ app.controller('galleryCtrl', function($scope, $firebase, Lightbox) {
 
 	};
 });
+
+.directive('fbShare', [
+    function() {
+        return {
+            restrict: 'A',
+            scope: {thumbnailLink: '='},
+            link: function(scope, element) {
+                element.on('click', function() {
+                    FB.ui({
+                        method: 'feed',
+                        name: 'Name you want to show',
+                        link: scope.thumbnailLink,
+                        picture: 'http://picture-you-want-to-show',
+                        caption: 'Caption you want to show',
+                        description: 'Description you want to show',
+                        message: 'Message you want to show'
+                    });
+                });
+            }
+        };
+    }
+]);
