@@ -72,7 +72,7 @@ app.directive('fbShare', [
                         method: 'feed',
                         name: 'Name you want to show',
                         link: scope.thumbnailLink,
-                        picture: 'http://picture-you-want-to-show',
+                        picture: scope.thumbnailLink,
                         caption: 'Caption you want to show',
                         description: 'Description you want to show',
                         message: 'Message you want to show'
