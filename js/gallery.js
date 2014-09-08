@@ -61,7 +61,7 @@ app.controller('galleryCtrl', function($scope, $firebase, Lightbox) {
 	};
 });
 
-.directive('fbShare', [
+app.directive('fbShare', [
     function() {
         return {
             restrict: 'A',
