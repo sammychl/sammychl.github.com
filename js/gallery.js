@@ -65,7 +65,7 @@ app.directive('fbShare', [
     function() {
         return {
             restrict: 'A',
-            scope: {thumbnailLink: '='},
+            scope: {thumbnailLink: '@info'},
             link: function(scope, element) {
                 element.on('click', function() {
                     FB.ui({
