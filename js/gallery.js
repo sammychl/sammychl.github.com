@@ -61,24 +61,4 @@ app.controller('galleryCtrl', function($scope, $firebase, Lightbox) {
 	};
 });
 
-app.directive('fbShare', [
-    function() {
-        return {
-            restrict: 'A',
-            scope: {thumbnailLink: '@info'},
-            link: function(scope, element) {
-                element.on('click', function() {
-                    FB.ui({
-                        method: 'feed',
-                        name: 'Name you want to show',
-                        link: scope.thumbnailLink,
-                        picture: scope.thumbnailLink,
-                        caption: 'Caption you want to show',
-                        description: 'Description you want to show',
-                        message: 'Message you want to show'
-                    });
-                });
-            }
-        };
-    }
-]);
+
