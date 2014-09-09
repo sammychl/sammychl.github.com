@@ -44,24 +44,6 @@
   </head>
 
   <body data-spy="scroll" ng-controller="galleryCtrl">
-<!-- Facebook share button -->
-<script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '713221795400872',
-          xfbml      : true,
-          version    : 'v2.0'
-        });
-      };
-
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-    </script>
     <div class="container">
       <ul id="gn-menu" class="gn-menu-main">
 	<li class="gn-trigger">
@@ -77,7 +59,7 @@
 		  <a href="http://lineuppers.com/index.html#about" class="gn-icon gn-icon-download">About</a>
 		</li>
 		<li><a href="http://lineuppers.com/index.html#service" class="gn-icon gn-icon-cog">Service</a></li>
-		<li><a href="http://lineuppers.com/index.html##works" class="gn-icon gn-icon-help">Works</a></li>
+		<li><a href="http://lineuppers.com/index.html#works" class="gn-icon gn-icon-help">Works</a></li>
 		<li>
 		  <a href="http://lineuppers.com/index.html##contact" class="gn-icon gn-icon-archive">Contact</a>
 		</li>
@@ -110,7 +92,7 @@
 
 		<ul class="list-group">
 		  <li class="list-group-item" ng-repeat="post in posts | filter:galleryListSearch">
-		    <a href="" ng-click="setSelectedPost(post.$id)">{{post.title}} - ({{post.tags}}) {{post.date}} </a>
+		    <a href="#post" ng-click="setSelectedPost(post.$id)">{{post.title}} - ({{post.tags}}) {{post.date}} </a>
 		  </li>
 		</ul>
 
@@ -142,6 +124,7 @@
 
 		<h2>Title: {{selectedPost.title}}</h2>
 		<p>Desc: {{selectedPost.description}}</p>
+		<p>Facebook Post: {{selectedPost.fburl}}</p>
 		
 	      </div>
 	      
@@ -157,9 +140,6 @@
 		{{index}}
 		<img class="img-responsive center-block boxed-grey" src="{{photo.thumbnailLink}}" alt="img-thumbnail" />
 	      </a>
-	      	<div fb-share info="{{photo.thumbnailLink}}">Facebook Share</div>
-	   
-	    		
 	    </li>
 	  </ul>		
 	</div>
