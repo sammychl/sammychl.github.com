@@ -22,7 +22,7 @@
 
 
     <!-- AngularJS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.19/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.19/angular.min.js"></script>
     <!-- Firebase -->
     <script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script>
     <!-- Firebase Simple Login -->
@@ -51,36 +51,34 @@
 
     <div class="container">
       
-      <form name="firebasePush" class="row">
+      <form name="firebasePush" class="row" ng-submit="firebasePush()">
 	
 	<div class="col-md-12">
 	  Tags: <input type="text" name="tags" value="" ng-model="meta.tags" required />
 	  Title: <input type="`text" name="title" value="" ng-model="meta.title" required />
 	  Password: <input type="text" name="password" value="" ng-model="meta.password" required />
-	  Fb Url: <input type="text" name="fburl" value="" ng-model="meta.fburl" required />
+	  
 	</div>
 	
 	<div class="col-md-12">
 	  Description: 
-	  <textarea type="text" name="description" value="" ng-model="meta.description" required>type description here </textarea>
-	  <br />
-	  
-	  {{meta.tags}}<br />
-	  {{meta.title}}<br />
-	  {{meta.password}}<br />
-	  {{meta.fburl}}<br />
-	  {{meta.description}}<br />
-	  
+	  <textarea type="text" name="description" value="" ng-model="meta.description" required />type description here </textarea>
+	  <div ng-show="firebasePush.tags.$error || firebasePush.title.$error || firebasePush.password.$error || firebasePush.description.$error"> 
+	    <p>Tags {{firebasePush.tags.$error}}</p>
+	    <p>Title {{firebasePush.title.$error}}</p>
+	    <p>Password {{firebasePush.password.$error}}</p>
+	    <p>Description {{firebasePush.description.$error}}</p>
+	  </div>
 	</div>
 	
-	
+	<input type="submit">Firebase Push</input>
       </form>
-      <div ng-click="firebasePush()">Firebase Push</div>	
+
     </div>
     <hr />
     <hr />
 
-<!--
+
     <div class="container" ng-show="currentUser.email == 'sammychl@hotmail.com'">
       <div class="row">
 	<div class="col-md-12">Title: {{post.title}}</div>
@@ -88,7 +86,7 @@
 	<div class="col-md-12">Password: {{post.password}}</div>
       </div>
       <div class="row"> 
-	<div ng-repeat="photo in photos" ng-if="photos">
+	<div ng-repeat="photo in photos">
 	  <div class="col-xs-10 col-xs-offset-1 col-md-3 boxed-grey">
 	    <div>
 	      <a href="{{photo.link}}">
@@ -128,7 +126,7 @@
     </div>
 
 
--->
+
 
   </body>
 
