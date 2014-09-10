@@ -72,7 +72,7 @@ app.controller('galleryChooserCtrl', function($scope, $firebase, $firebaseSimple
 	$scope.photos = [];
 	$scope.meta = {};
 	$scope.posts = galleriesArr;
-	console.log(galleriesArr);
+
 
 	$scope.selectedPost = {};
 
