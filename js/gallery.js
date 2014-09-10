@@ -43,7 +43,7 @@ app.controller('galleryCtrl', function($scope, $firebase, Lightbox) {
 			$scope.security.passwordError = "Please enter Password";
 			$scope.selectedPost = {};
 		}
-		console.log($scope.selectedPost);
+
 	};
 
 	$scope.checkPassword = function() {
