@@ -901,6 +901,7 @@ footer a:hover {
 
 ul {
     list-style-type: none;
+    -webkit-padding-end: 40px
 }
 
 .resizable {
