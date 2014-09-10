@@ -63,18 +63,19 @@
 	<div class="col-md-12">
 	  Description: 
 	  <textarea type="text" name="description" value="" ng-model="meta.description" required>type description here </textarea>
-	
-	{{meta.tags}}<br />
-	{{meta.title}}<br />
-	{{meta.password}}<br />
-	{{meta.fburl}}<br />
-	{{meta.description}}<br />
-	
+	  <br />
+	  
+	  {{meta.tags}}<br />
+	  {{meta.title}}<br />
+	  {{meta.password}}<br />
+	  {{meta.fburl}}<br />
+	  {{meta.description}}<br />
+	  
 	</div>
 	
 	
       </form>
-<button ng-click="firebasePush()">Firebase Push</button>	
+      <div ng-click="firebasePush()">Firebase Push</div>	
     </div>
     <hr />
     <hr />
