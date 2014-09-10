@@ -70,6 +70,9 @@
 	<div class="col-md-12">Title: {{post.title}}</div>
 	<div class="col-md-12">Tags: {{post.tags}}</div>
 	<div class="col-md-12">Password: {{post.password}}</div>
+	<div class="col-md-12">Fburl: {{post.fburl}}</div>
+	<div class="col-md-12">Description: {{post.description}}</div>
+
       </div>
       <div class="row"> 
 	<div ng-repeat="photo in photos">
@@ -91,6 +94,8 @@
 	<div>Tag: {{post.tags}}</div>
 	<div>Title: {{post.title}}</div>
 	<div>Password: {{post.password}}</div>
+	<div>Fburl: {{post.fburl}}</div>
+	<div>Description: {{post.description}}</div>
 	<a href="#"><div ng-click="setSelectedPost(post.$id)">Id: {{post.$id}}</div></a>
 	<br />
       </div>
