@@ -13,7 +13,7 @@ app.controller('galleryCtrl', function($scope, $firebase, Lightbox) {
 	$scope.photos = [];
 	$scope.meta = {};
 	$scope.posts = galleriesArr;
-	console.log(galleriesArr);
+
 	$scope.security = {password:"", passwordValid:false};
 	$scope.selectedPost = false;
 
