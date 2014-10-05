@@ -470,18 +470,36 @@ input.gn-search:focus {
 
 
 
-.intro .slogan {
+.introphotobooth .slogan {
 	padding:250px 0 60px;
 	text-align: center;
 	
 }
-.intro .slogan h1 {
+.introphotobooth .slogan h1 {
 	color: #fff;
 	line-height: 1.1em;
 	margin-bottom: 20px;
 	 font-size: 40px;
 }
-.intro .slogan p {
+.introphotobooth .slogan p {
+	color: #eee;
+	margin-bottom: 50px;
+	font-size: 20px;
+}
+
+
+.introwedding .slogan {
+	padding:250px 0 60px;
+	text-align: center;
+	
+}
+.introwedding .slogan h1 {
+	color: #fff;
+	line-height: 1.1em;
+	margin-bottom: 20px;
+	 font-size: 40px;
+}
+.introwedding .slogan p {
 	color: #eee;
 	margin-bottom: 50px;
 	font-size: 20px;
