@@ -32,7 +32,7 @@ app.controller('galleryCtrl', function($scope, $firebase, Lightbox) {
 
 	$scope.setSelectedPost = function(id) {
 		post = galleriesArr.$getRecord(id);
-		console.log($scope.selectedPost);
+
 		if (post.password === $scope.security.password || post.password === "null") {
 			$scope.security.passwordValid = true;
 			$scope.security.passwordError = "";
@@ -43,7 +43,7 @@ app.controller('galleryCtrl', function($scope, $firebase, Lightbox) {
 			$scope.security.passwordError = "Please enter Password";
 			$scope.selectedPost = {};
 		}
-		console.log($scope.selectedPost);
+
 	};
 
 	$scope.checkPassword = function() {
