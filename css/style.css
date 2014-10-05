@@ -918,6 +918,18 @@ footer a:hover {
 	.introwedding .slogan {
 		padding:100px 0 60px;
 	}
+
+	#introphotobooth {	
+	    background-image: url(../img/img-bg.jpg);
+	    background-size: cover;
+	}
+	
+	#introwedding {	
+	    background-image: url(../img/wedding.jpg);
+	    background-size: cover;
+	}
+
+
 }
 
 @media (max-width:480px) {
