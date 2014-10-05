@@ -449,15 +449,26 @@ input.gn-search:focus {
 --- Intro
 ============================ */
 
-.intro {
+.introphotobooth {
 	width:100%;
 	position:relative;
 }
 
-#intro{	
+#introphotobooth {	
 	background-image: url(../img/boothsetup.jpg);
 	background-size: cover;
 }
+.introwedding {
+	width:100%;
+	position:relative;
+}
+
+#introwedding {	
+	background-image: url(../img/img-bg.jpg);
+	background-size: cover;
+}
+
+
 
 .intro .slogan {
 	padding:250px 0 60px;
@@ -855,11 +866,15 @@ footer a:hover {
 
 @media(min-width:767px) {
 
-    .intro {
-        height: 100%;
+    .introwedding {
+        height: 45%;
         padding: 0;
     }
 
+    .introphotobooth {
+        height: 45%;
+        padding: 0;
+    }
     .brand-heading {
         font-size: 100px;
     }
@@ -879,18 +894,21 @@ footer a:hover {
 	.boxed-grey {
 		margin-bottom: 30px;
 	}
-	.intro .slogan {
+	.introphotobooth .slogan {
 		padding:100px 0 60px;
-		
 	}
-
+	.introwedding .slogan {
+		padding:100px 0 60px;
+	}
 }
 
 @media (max-width:480px) {
 
-	.intro .slogan {
+	.introphotobooth .slogan {
 		padding:170px 0 60px;
-		
+	}
+	.introwedding .slogan {
+		padding:170px 0 60px;
 	}
 	
 }
