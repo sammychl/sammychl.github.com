@@ -455,7 +455,7 @@ input.gn-search:focus {
 }
 
 #introphotobooth {	
-	background-image: url(../img/boothsetup.jpg);
+	background-image: url(../img/photobooth.jpg);
 	background-size: cover;
 }
 .introwedding {
@@ -464,7 +464,7 @@ input.gn-search:focus {
 }
 
 #introwedding {	
-	background-image: url(../img/img-bg.jpg);
+	background-image: url(../img/wedding.jpg);
 	background-size: cover;
 }
 
