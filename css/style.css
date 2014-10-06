@@ -925,7 +925,7 @@ footer a:hover {
 	}
 	
 	#introwedding {	
-	    background-image: url(../img/wedding.jpg);
+	    background-image: url(../img/wedding768.jpg);
 	    background-size: cover;
 	}
 
@@ -940,6 +940,11 @@ footer a:hover {
 	.introwedding .slogan {
 		padding:170px 0 60px;
 	}
+	#introwedding {	
+	    background-image: url(../img/wedding480.jpg);
+	    background-size: cover;
+	}
+
 	
 }
 
