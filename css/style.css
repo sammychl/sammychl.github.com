@@ -960,3 +960,15 @@ ul {
 .resizable {
     resize: both;
 }
+
+/******************
+** Masonry CSS with Boothstrap **
+** for recent works inline block **
+********************/
+
+.photoblock {
+ display: inline-block;
+ margin:  0.25rem;
+ padding:  1rem;
+ width:  100%; 
+}
