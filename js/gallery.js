@@ -16,7 +16,7 @@ app.controller('galleryCtrl', function($scope, $firebase, Lightbox) {
 
 	$scope.security = {password:"", passwordValid:false};
 	$scope.selectedPost = false;
-	$scope.iframeSrc = "";
+
 
 	function matchPostToLightboxApi (post) {
 		angular.forEach(post.files, function(image) {
@@ -45,11 +45,13 @@ app.controller('galleryCtrl', function($scope, $firebase, Lightbox) {
 			$scope.selectedPost = {};
 		}
 		
-		
-		/* Set iframeSrc **/
+	};
+	
+	/* Set iframeSrc **/
+	$scope.iframeSrc = function(){	
 		// One should think about their particular case and sanitize accordingly
 		var baseUrl = "https://drive.google.com/embeddedfolderview?id="; 
-		var qs = post.folderId
+		var qs = post.folderId + "#grid"
 		// `baseUrl` isn't exposed to a user's control, so we don't have to worry about escaping it.?
 		$scope.iframeSrc = baseUrl + qs;		
 		
