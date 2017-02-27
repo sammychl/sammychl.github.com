@@ -8,7 +8,7 @@ app.controller('galleryCtrl', function($scope, $firebase, Lightbox, $sce) {
 	var galleryRef = new Firebase('https://glowing-fire-6466.firebaseIO.com/gallery');
 	var galleryRefSync = $firebase(galleryRef);
 	var galleriesArr = galleryRefSync.$asArray();
-	var post;
+	var post = {folderId:""};
 
 	$scope.photos = [];
 	$scope.meta = {};
