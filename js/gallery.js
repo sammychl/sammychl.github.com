@@ -4,7 +4,7 @@
 
 var app = angular.module('gallery', ['firebase', 'bootstrapLightbox']);
 
-app.controller('galleryCtrl', function($scope, $firebase, Lightbox) {
+app.controller('galleryCtrl', function($scope, $firebase, Lightbox, $sce) {
 	var galleryRef = new Firebase('https://glowing-fire-6466.firebaseIO.com/gallery');
 	var galleryRefSync = $firebase(galleryRef);
 	var galleriesArr = galleryRefSync.$asArray();
@@ -30,7 +30,7 @@ app.controller('galleryCtrl', function($scope, $firebase, Lightbox) {
 		Lightbox.openModal($scope.selectedPost.files, index);
 	};
 
-
+	
 	$scope.setSelectedPost = function(id) {
 		post = galleriesArr.$getRecord(id);
 
@@ -48,14 +48,14 @@ app.controller('galleryCtrl', function($scope, $firebase, Lightbox) {
 	};
 	
 	/* Set iframeSrc **/
-	$scope.iframeSrc = function(){	
+	$scope.iframeSrc = $sce.trustAsResourceUrl(getIframeUrl())
+	
+	function getIframeUrl(){	
 		// One should think about their particular case and sanitize accordingly
 		var baseUrl = "https://drive.google.com/embeddedfolderview?id="; 
 		var qs = (post.folderId + "#grid") || "0B_X7y9ovzp5UdE1CZnFieVhVQjA#list"
 		// `baseUrl` isn't exposed to a user's control, so we don't have to worry about escaping it.?
 		return baseUrl + qs;		
-		
-
 	};
 
 	
