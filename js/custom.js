@@ -23,7 +23,7 @@
 
 	
 	//nivo lightbox
-	/* comment out */
+	/* comment out 
 	$('.gallery-item a').nivoLightbox({
 		effect: 'fadeScale',                             // The effect to use when showing the lightbox
 		theme: 'default',                           // The lightbox theme to use
