@@ -43,9 +43,23 @@ app.controller('galleryCtrl', function($scope, $firebase, Lightbox) {
 			$scope.security.passwordError = "Please enter Password";
 			$scope.selectedPost = {};
 		}
+		
+
 
 	};
 
+	
+	$scope.getIframeSrc = function(){
+		// One should think about their particular case and sanitize accordingly
+		var baseUrl = "https://drive.google.com/embeddedfolderview?id="; 
+		var qs = post.folderId
+
+		  // `baseUrl` isn't exposed to a user's control, so we don't have to worry about escaping it.
+		return baseUrl + qs;		
+	
+	}
+	
+	
 	$scope.checkPassword = function() {
 		if (post.password === $scope.security.password || post.password === "null") {
 			$scope.security.passwordValid = true;
