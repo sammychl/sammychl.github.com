@@ -45,14 +45,14 @@ app.controller('galleryCtrl', function($scope, $firebase, Lightbox) {
 			$scope.selectedPost = {};
 		}
 		
-		function(){
-			// One should think about their particular case and sanitize accordingly
-			var baseUrl = "https://drive.google.com/embeddedfolderview?id="; 
-			var qs = post.folderId
-
-		  	// `baseUrl` isn't exposed to a user's control, so we don't have to worry about escaping it.?
-			$scope.iframeSrc = baseUrl + qs;		
-		}()
+		
+		/* Set iframeSrc **/
+		// One should think about their particular case and sanitize accordingly
+		var baseUrl = "https://drive.google.com/embeddedfolderview?id="; 
+		var qs = post.folderId
+		// `baseUrl` isn't exposed to a user's control, so we don't have to worry about escaping it.?
+		$scope.iframeSrc = baseUrl + qs;		
+		
 
 	};
 
