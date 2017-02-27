@@ -53,7 +53,7 @@ app.controller('galleryCtrl', function($scope, $firebase, Lightbox, $sce) {
 	function getIframeUrl(){	
 		// One should think about their particular case and sanitize accordingly
 		var baseUrl = "https://drive.google.com/embeddedfolderview?id="; 
-		var qs = (post.folderId + "#grid") || "0B_X7y9ovzp5UdE1CZnFieVhVQjA#list"
+		var qs = "0B_X7y9ovzp5UdE1CZnFieVhVQjA#list" && (post.folderId + "#grid")
 		// `baseUrl` isn't exposed to a user's control, so we don't have to worry about escaping it.?
 		return baseUrl + qs;		
 	};
